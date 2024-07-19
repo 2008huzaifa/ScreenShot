@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        #save div {
+            margin: 20px !important;
+            border: none !important;
+        }
+    </style>
+</head>
+<center>
+    <div style="width: 50vw; border: 5px solid red ;border-radius: 20px;" id="shot">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi ipsum voluptas velit a doloremque quasi
+        delenitaiores non a beatae odio quis culpa alias. Quam animi inventore cupiditate
+        quasi sit?Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi dicta nam aspernatur, ad tempora
+        assumenda unde accusamus perferendis, ipsam possimus repudiandae libero dignissimos aperiam. Ipsam suscipit
+        tenetur eum repellat aut.
+    </div><br><br>
+    <button onclick="download()" id="screen">ScreenShot</button>
+    <br><br>
+    <div style="text-align: center;" id="save">
+    </div>
+</center>
+
+<script>
+    const download = () => {
+        html2canvas(document.querySelector('#shot')).then(canvas => {
+            document.getElementById('save').appendChild(canvas);
+
+            document.getElementById('screen').disabled = true
+        });
+    }
+</script>
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+</body>
+
+</html>
